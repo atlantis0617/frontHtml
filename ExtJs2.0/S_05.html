@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ExtJs05</title>
+    <link rel="stylesheet" type="text/css" href="ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="ext/ext-all.js"></script>
+    <script>
+        Ext.onReady(function(){
+            new Ext.Panel({
+                renderTo:Ext.getBody(),
+                title:'面板头部header',
+                width:300,
+                height:200,
+                html:'<a href="#">面板主区域</a>',
+                tbar:[{
+                    text:'顶部工具栏topToolbar'
+                }],
+                bbar:[{
+                    text:'底部工具栏bottomToolbar'
+                }],
+                buttons:[{
+                    text:'按钮位于footer'
+                }]
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>开始使用layer</title>
+    <link rel="stylesheet" href="layer/skin/default/layer.css">
+</head>
+<body>
+    <button id="test1">小小提示层</button>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <script>
+        /*皮肤扩展*/
+        /*$('#test1').on('click', function(){
+            layer.alert('内容', {
+                icon: 1,
+                skin: 'layer-ext-moon' //该皮肤由layer.seaning.com友情扩展。关于皮肤的扩展规则，去这里查阅
+            })
+        }); */
+        /**弹出框1*/
+        /*$('#test1').on('click', function(){
+            layer.alert('见到你真的很高兴', {icon: 6});
+        });*/
+        /**弹出框2*/
+        /*$('#test1').on('click', function(){
+            layer.msg('你确定你很帅么？', {
+                 time: 0 //不自动关闭
+                ,btn: ['必须啊', '丑到爆']
+                ,yes: function(index){
+                    layer.close(index);
+                    layer.msg('666 O.o', {
+                        icon: 6
+                        ,btn: ['嗷','嗷','嗷']
+                    });
+                }
+            });
+        });*/
+        /**弹出框2*/
+        /*$('#test1').on('click', function(){
+            layer.msg('这是最常用的吧');
+        });*/
+        /**弹出框2*/
+        /*$('#test1').on('click', function(){
+            /!*layer.msg('不开心。。', {time:0,icon: 5});*!/
+            layer.msg('不开心。。', {icon: 5});
+        });*/
+        /**弹出框2*/
+        /*$('#test1').on('click', function(){
+            layer.msg('玩命卖萌中', function(){
+                    //关闭后的操作
+            });
+        });*/
+        /**弹出框2*/
+        $('#test1').on('click', function(){
+            //页面层-自定义
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: 0,
+                area: '516px',
+                skin: 'layui-layer-nobg', //没有背景色
+                shadeClose: true,
+                content: $('#tong')
+            });
+        });
+    </script>
+</body>
+</html>

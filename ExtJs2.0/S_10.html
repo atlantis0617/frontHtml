@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ExtJs10</title>
+    <link rel="stylesheet" type="text/css" href="ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="ext/ext-all.js"></script>
+    <script>
+        Ext.onReady(function(){
+            //定义列:
+            var cm = new Ext.grid.ColumnModel([
+                {header:'编号',dataIndex:'id'},
+                {header:'名称',dataIndex:'name'},
+                {header:'描述',dataIndex:'descn'}
+            ]);
+            //数据定义：
+            var data = [['1','name1','descn1'],
+                        ['2','name2','descn2'],
+                        ['3','name3','descn3'],
+                        ['4','name4','descn4'],
+                        ['5','name5','descn5']];
+            //数据源定义:
+            var ds=new Ext.data.Store({
+                proxy:new Ext.data.MemoryProxy(data),
+                reader:new Ext.data.ArrayReader({},[
+                    {name:'id'},
+                    {name:'name'},
+                    {name:'descn'}
+                ])
+            });
+            ds.load();
+
+            var grid = new Ext.grid.GridPanel({
+                renderTo:Ext.getBody(),
+                ds:ds,
+                cm:cm,
+                width:300,
+                autoHeight:true
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

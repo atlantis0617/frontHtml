@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ExtJS04</title>
+    <link rel="stylesheet" type="text/css" href="ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="ext/ext-all.js"></script>
+    <script>
+        Ext.onReady(function(){
+           var panel = new Ext.TabPanel({
+               renderTo:Ext.getBody(),
+               width:300,
+               height:200,
+               activeTab:0,
+               items:[new Ext.Panel({
+                   title:"面板1",
+                   height:30,
+                   html:"面板1"
+               }),new Ext.Panel({
+                   title:"面板2",
+                   height:30,
+                   html:"面板2"
+               }),new Ext.Panel({
+                   title:'面板3',
+                   height:30,
+                   html:'面板3'
+               })]
+           });
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

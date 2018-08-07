@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ExtJs08</title>
+    <link rel="stylesheet" type="text/css" href="ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="ext/ext-all.js"></script>
+    <script>
+        Ext.onReady(function(){
+            var viewPort = new Ext.Viewport({
+                layout:'border',
+                renderTo:Ext.getBody(),
+                items:[{title:'north',
+                        region:'north',
+                        spilt:true,
+                        border:true,
+                        collapsible:true,
+                        height:100,
+                        minSize:100,
+                        maxSize:120},
+                    {   title:'south',
+                        region:'south',
+                        spilt:true,
+                        border:true,
+                        collapsible:true,
+                        height:100,
+                        minSize:100,
+                        maxSize:120
+                    },{ title:'east',
+                        region:'east',
+                        spilt:true,
+                        border:true,
+                        collapsible:true,
+                        height:120,
+                        minSize:120,
+                        maxSize:200
+                    },{ title:'west',
+                        region:'west',
+                        spilt:true,
+                        border:true,
+                        collapsible:true,
+                        height:120,
+                        minSize:120,
+                        maxSize:200
+                    },{
+                        title:'center',
+                        region:'center',
+                        spilt:true,
+                        border:true,
+                        collapsible:true
+                    }
+                ]
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

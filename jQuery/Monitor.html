@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单监控</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .head{
+            width: 1363px;
+            height: 235px;
+            position: absolute;
+            top:10px;
+        }
+        .c1{
+            position: relative;
+            top: 50px;
+            left: 20px;
+        }
+        .c2{
+            position: relative;
+            top:-38px;
+            left: 400px;
+        }
+        .intro li{
+            float: left;
+            list-style: none;
+            float: left;
+            width: 109px;
+            height: 23px;
+            text-align: center;
+            font-weight: bold;
+            font-family: "Microsoft YaHei";
+        }
+        .info{
+            position: relative;
+            left: -220px;
+            top: 10px;
+        }
+        .info ul li{
+            list-style: none;
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+        .orderCount{
+            width:100px;
+            height:100px;
+            border-radius:100px;
+            border:5px solid #00bbee;
+            text-align:center;
+
+        }
+        .order{
+            font-weight: bold;
+            font-family: "Microsoft YaHei";
+            color: #00bbee;
+            line-height: 55px;
+        }
+        .orders{
+            font-family: "Microsoft YaHei", 微软雅黑;
+            color: #00bbee;
+            line-height: 0px;
+        }
+        .quantity{
+            width:100px;
+            height:100px;
+            border-radius:100px;
+            border:5px solid gold;
+            text-align:center;
+        }
+        .count{
+            font-weight: bold;
+            font-family: "Microsoft YaHei";
+            color: gold;
+            line-height: 55px;
+        }
+        .counts{
+            font-family: "Microsoft YaHei", 微软雅黑;
+            color: gold;
+            line-height: 0px;
+        }
+        .volume{
+            width:100px;
+            height:100px;
+            border-radius:100px;
+            border:5px solid deeppink;
+            text-align:center;
+        }
+        .vol{
+            font-weight: bold;
+            font-family: "Microsoft YaHei";
+            color: deeppink;
+            line-height: 55px;
+        }
+        .vols{
+            font-family: "Microsoft YaHei", 微软雅黑;
+            color: deeppink;
+            line-height: 0px;
+        }
+        .weight{
+            width:100px;
+            height:100px;
+            border-radius:100px;
+            border:5px solid palegreen;
+            text-align:center;
+        }
+        .wei{
+            font-weight: bold;
+            font-family: "Microsoft YaHei";
+            color: palegreen;
+            line-height: 55px;
+        }
+        .weis{
+            font-family: "Microsoft YaHei", 微软雅黑;
+            color: palegreen;
+            line-height: 0px;
+        }
+        .normal{
+            width:100px;
+            height:100px;
+            border-radius:100px;
+            border:5px solid green;
+            text-align:center;
+        }
+        .nor{
+            font-weight: bold;
+            font-family: "Microsoft YaHei";
+            color: green;
+            line-height: 55px;
+        }
+        .nors{
+            font-family: "Microsoft YaHei", 微软雅黑;
+            color: green;
+            line-height: 0px;
+        }
+        .exception{
+            width:100px;
+            height:100px;
+            border-radius:100px;
+            border:5px solid red;
+            text-align:center;
+        }
+        .exc{
+            font-weight: bold;
+            font-family: "Microsoft YaHei";
+            color: red;
+            line-height: 55px;
+        }
+        .excs{
+            font-family: "Microsoft YaHei", 微软雅黑;
+            color: red;
+            line-height: 0px;
+        }
+        .submit{
+            position: relative;
+            width: 220px;
+            height: 195px;
+            top: -75px;
+            left: 1107px;
+        }
+        .sb{
+            font-family: "Microsoft YaHei", 微软雅黑;
+            font-size: 16px;
+            color: #00bbee;
+        }
+        .showHead li{
+            list-style: none;
+            font-family: "Microsoft YaHei", 微软雅黑;
+            font-weight: bold;
+            color: #00bbee;
+            float: left;
+            position: relative;
+            top: 260px;
+            left: 20px;
+            border: 1px #04243E solid;
+        }
+        .h1{
+            width: 175px;
+            height: 30px;
+            text-align: center;
+        }
+        .h2{
+            width: 458px;
+            height: 30px;
+            border: 1px green solid;
+            text-align: center;
+        }
+        .h3{
+            width: 458px;
+            height: 30px;
+            border: 1px green solid;
+            text-align: left;
+        }
+        .showData li{
+            list-style: none;
+            font-family: "Microsoft YaHei", 微软雅黑;
+            font-weight: bold;
+            color: #00bbee;
+            float: left;
+            position: relative;
+            top: 260px;
+            left: 20px;
+            border: 1px #04243E solid;
+        }
+        #tip{
+            position: absolute;
+            top: 322px;
+            left: 910px;
+            font-family: "Microsoft YaHei", 微软雅黑;
+            color: rebeccapurple;
+            background: url("images/bg.jpg");
+
+        }
+
+    </style>
+    <script type="application/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#tip").css("display","none");
+            $("#h3").mouseover(function(){
+                $("#h3").css("cursor","pointer");
+                $("#tip").css("display","block");
+            });
+            $("#h3").mouseout(function(){
+                $("#h3").css("cursor","pointer");
+                $("#tip").css("display","none");
+            });
+
+        });
+    </script>
+</head>
+<body bgcolor="#001C35">
+    <div class="total">
+        <div class="head">
+            <div class="company">
+                <div class="c1"><img src="images/companyLog.jpg"></div>
+                <div class="c2">
+                    <ul class="intro">
+                        <li><img src="images/bg003.gif"></li>
+                        <li style="color:green">正常执行</li>
+                        <li><img src="images/bg004.gif"></li>
+                        <li style="color:orange">异常受理</li>
+                        <li><img src="images/bg005.gif"></li>
+                        <li style="color:red">执行异常</li>
+                    </ul>
+                </div>
+                <div class="info">
+                    <ul>
+                        <li><div class="orderCount"><p class="order">订单数量</p><br/><p class="orders">10</p></div></li>
+                        <li><div class="quantity"><p class="count">总件数</p><br/><p class="counts">10</p></div></li>
+                        <li><div class="volume"><p class="vol">总体积</p><br/><p class="vols">10</p></div></li>
+                        <li><div class="weight"><p class="wei">总重量</p><br/><p class="weis">10</p></div></li>
+                        <li><div class="normal"><p class="nor">正常订单</p><br/><p class="nors">10</p></div></li>
+                        <li><div class="exception"><p class="exc">异常订单</p><br/><p class="excs">10</p></div></li>
+                    </ul>
+                </div>
+                <div class="submit">
+                    <form action="#" method="post">
+                        <b class="sb">监控客户:</b>&nbsp;<input type="text" name="customer" style="width: 120px;border-radius:8px;"><br/>
+                        <b class="sb">订单编号:</b>&nbsp;<input type="text" name="orderNo" style="width: 120px;border-radius:8px;"><br/>
+                        <b class="sb">是否异常:</b>&nbsp;<input type="checkbox"><br/>
+                        <input type="submit" value="" style="background:url('images/search.png') no-repeat;border: 0px;width: 50px;height: 50px;cursor: pointer ">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="showInfo">
+                <div class="showHead">
+                    <ul>
+                        <li class="h1">单号</li>
+                        <li class="h1">单据类型</li>
+                        <li class="h1">客户</li>
+                        <li class="h1">状态</li>
+                        <li class="h1">箱号</li>
+                        <li class="h2">进度</li>
+                    </ul>
+                </div>
+                <div class="showData">
+                    <ul>
+                        <li class="h1">IMP1612250001</li>
+                        <li class="h1">港口</li>
+                        <li class="h1">利乐上海分公司</li>
+                        <li class="h1"><img src="images/state001.gif"></li>
+                        <li class="h1">XH001</li>
+                        <li class="h3"><img src="images/active.gif" id="h3"></li>
+                        <div class="content">
+                            <table id="tip">
+                                <tr><td>监控节点:</td><td>生效</td></tr>
+                                <tr><td>开始时间</td><td>2016-12-25 15:29</td></tr>
+                                <tr><td>结束时间:</td><td>2016-12-25 15:29</td></tr>
+                                <tr><td>监控节点状态:</td><td>正常执行</td></tr>
+                                <tr><td>备注:</td><td>Test</td></tr>
+                            </table>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="foot"></div>
+    </div>
+</body>
+</html>

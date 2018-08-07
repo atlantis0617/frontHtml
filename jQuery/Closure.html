@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包学习</title>
+    <script type="application/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script>
+        /**最简单的闭包学习1*/
+        /*function A(){
+            function B(){
+                alert("Hello Closure")
+            }
+            return B;
+        }
+        var C = A();
+        C();*/
+        /**闭包学习2*/
+        /*function A(){
+            var  count =0;
+            function B(){
+                count++;
+                alert(count);
+            }
+            return B;
+        }
+        var C = A();
+        C();
+        C();
+        C();*/
+        /**闭包高级写法*/
+        (function(document){
+            var viewPort;
+            var obj = {
+                init:function(id){
+                    viewport = document.querySelector("#"+id);
+                },
+                addChild:function(child){
+                    viewport.appendChild(child);
+                },
+                removeChild:function(child){
+                    viewport.removeChild(child);
+                }
+            }
+            window.jView = obj;
+        })(document);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
